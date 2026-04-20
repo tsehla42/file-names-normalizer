@@ -1,0 +1,49 @@
+{
+  "name": "normalize-file-names",
+  "version": "0.1.0",
+  "description": "Normalize file names: clean separators, strip special chars, transliterate Ukrainian <=> Latin",
+  "type": "module",
+  "bin": {
+    "nn": "./dist/cli.js",
+    "normalize-file-names": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "fill-examples": "tsx scripts/fill-examples.ts",
+    "demo": "npm run build && npm run fill-examples && node dist/cli.js --dry-run examples/*.*"
+  },
+  "keywords": [
+    "cli",
+    "filename",
+    "normalize",
+    "transliterate",
+    "ukrainian"
+  ],
+  "license": "GPL-3.0",
+  "dependencies": {
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "tsx": "^4.0.0",
+    "typescript": "^6.0.0",
+    "vitest": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
